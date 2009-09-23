@@ -61,7 +61,7 @@ class UStream {
 	 * @param String $subject
 	 * @param String $property
 	 * 
-	 * @return stdObj
+	 * @return stdClass
 	 */
 	public function getValueOf($subject, $property) {
 		$requestUrl = $this->buildRequestUrl($subject, 'getValueOf/'.$property);
@@ -78,7 +78,7 @@ class UStream {
 	 * @param String $what
 	 * @param Number $page
 	 * 
-	 * @return stdObj
+	 * @return stdClass
 	 */
 	public function search($scope, $where, $how, $what,$page = 1) {
 		$fullCommand = sprintf("search/%s:%s:%s", $where, $how, $what);
@@ -95,7 +95,7 @@ class UStream {
 	/**
 	 * @see http://developer.ustream.tv/data_api/docs
 	 * 
-	 * @return stdObj
+	 * @return stdClass
 	 */
 	public function getRecent() {
 		$requestUrl = $this->buildRequestUrl('all', 'getRecent');
@@ -106,7 +106,7 @@ class UStream {
 	/**
 	 * @see http://developer.ustream.tv/data_api/docs
 	 * 
-	 * @return stdObj
+	 * @return stdClass
 	 */
 	public function getMostViewers() {
 		$requestUrl = $this->buildRequestUrl('all', 'getMostViewers');
@@ -117,7 +117,7 @@ class UStream {
 	/**
 	 * @see http://developer.ustream.tv/data_api/docs
 	 * 
-	 * @return stdObj
+	 * @return stdClass
 	 */
 	public function getRandom() {
 		$requestUrl = $this->buildRequestUrl('all', 'getRandom');
@@ -129,7 +129,7 @@ class UStream {
 	 * @see http://developer.ustream.tv/data_api/docs
 	 * 
 	 * @param String $page
-	 * @return stdObj
+	 * @return stdClass
 	 */
 	public function getAllNew($page = 1) {
 		$requestUrl = $this->buildRequestUrl('all', 'getAllNew');
@@ -145,7 +145,7 @@ class UStream {
 	 * @see http://developer.ustream.tv/data_api/docs
 	 * 
 	 * @param String $subject
-	 * @return stdObj
+	 * @return stdClass
 	 */
 	public function getTags($subject) {
 		$requestUrl = $this->buildRequestUrl($subject, 'getTags');
@@ -161,7 +161,7 @@ class UStream {
 	 * @see http://developer.ustream.tv/data_api/docs
 	 * 
 	 * @param String $subject
-	 * @return stdObj
+	 * @return stdClass
 	 */
 	public function getEmbedTag($subject) {
 		$requestUrl = $this->buildRequestUrl($subject, 'getEmbedTag');
@@ -178,7 +178,7 @@ class UStream {
 	 * @param Boolean $autoPlay
 	 * @param Boolean $mute
 	 * 
-	 * @return stdObj
+	 * @return stdClass
 	 */
 	public function getCustomEmbedTag($subject,$width = 100, $height = 100, $autoPlay = false, $mute = false) {
 		$parms['autoplay'] = $autoPlay;
@@ -200,7 +200,7 @@ class UStream {
 	 * 
 	 * @param String $subject
 	 * 
-	 * @return stdObj
+	 * @return stdClass
 	 */
 	public function getId($subject) {
 		$requestUrl = $this->buildRequestUrl($subject, 'getId');
@@ -214,7 +214,7 @@ class UStream {
 	 * @param String $subject
 	 * @param Number $page
 	 * 
-	 * @return stdObj
+	 * @return stdClass
 	 */
 	public function listAllChannels($subject, $page = 1) {
 		$requestUrl = $this->buildRequestUrl($subject, 'listAllChannels');
@@ -228,7 +228,7 @@ class UStream {
 	 * @param String $subject
 	 * @param Number $page
 	 * 
-	 * @return stdObj
+	 * @return stdClass
 	 */
 	public function listAllVideos($subject, $page = 1) {
 		$requestUrl = $this->buildRequestUrl($subject, 'listAllVideos');
@@ -242,7 +242,7 @@ class UStream {
 	 * @param String $subject
 	 * @param Number $page
 	 * 
-	 * @return stdObj
+	 * @return stdClass
 	 */
 	public function getComments($subject, $page = 1) {
 		$requestUrl = $this->buildRequestUrl($subject, 'getComments');
@@ -299,7 +299,7 @@ class UStream {
 	 * @param String $requestUrl
 	 * @param Number $page
 	 * 
-	 * @return stdObj
+	 * @return stdClass
 	 */
 	public function getResult($requestUrl, $page = 1) {
 		
