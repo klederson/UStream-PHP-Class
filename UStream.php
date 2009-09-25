@@ -284,9 +284,9 @@ class UStream {
 			$trueParms .= sprintf("%s:%s",$index,$value);
 		}
 		
-		$trueParms = !empty($trueParms) && $trueParms != null ? $trueParms .'&params=' : $trueParms;
+		$trueParms = !empty($trueParms) && $trueParms != null ? '&params=' . $trueParms: $trueParms;
 		
-		return sprintf("%s/%s/%s/%s/%s?key=%s%s",self::$apiUrl, self::$responseMode, self::$requestMode, $subject, $command, self::$apiKey, $trueParms);
+		return $this->calledUrl = sprintf("%s/%s/%s/%s/%s?key=%s%s",self::$apiUrl, self::$responseMode, self::$requestMode, $subject, $command, self::$apiKey, $trueParms);
 	}
 	
 	###########################################

@@ -4,11 +4,13 @@ require_once('UStream.php');
 
 $ustream = new UStream('6FD7A12971BFFDD81A5869FDE60756DC');
 
-$ustream->setRequestMode('user');
-$result = $ustream->getInfo('klederson');
+$ustream->setRequestMode('channel');
+//$result = $ustream->getInfo('aleac');
 
 print "<pre>";
-	print_r($ustream->cacheResult);
+$ustream->getCustomEmbedTag('aleac',600,300,true,false);
+print_r($ustream);
+	//print_r($ustream->cacheResult);
 print "</pre>";
 
 print "<hr>";
